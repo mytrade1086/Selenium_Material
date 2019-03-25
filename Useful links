@@ -1,0 +1,35 @@
+https://chercher.tech/java/javascript-executor-selenium-webdriver#click
+
+#Scrolling to particular element
+Sometimes we may need to scroll a webpage to particular location/element, those cases we can 
+use scrollIntoView method in javascript to scroll
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+// scroll to particular element
+js.executeScript("document.getElementById('default').scrollIntoView(true)");
+
+
+###to check if page loaded or not
+JavascriptExecutor js = (JavascriptExecutor) driver;
+// return the state of the page load
+js.executeScript("return document.readyState");
+
+
+##Highlight a Element in JavascriptExecutor : 
+JavascriptExecutor js = (JavascriptExecutor) driver;
+// highlight the search bar on google.
+js.executeScript("document.getElementById('lst-ib').style.backgroundColor='red'");
+
+#Scrolling Page
+Scroll By Pages in JavascriptExecutor : 
+JavascriptExecutor js = (JavascriptExecutor) driver;
+
+// scrolls the page by three page downs
+js.executeScript("window.scrollByPages(3)");
+
+// scrolls the page by 5 page up
+js.executeScript("window.scrollByPages(-5)");
+
+
+Before going to try with JavascriptExecutor, you must try to execute your selenium code with different browser, if it works well with other browsers then only you should go for the JavascriptExecutor but if the test is failing in all browser then you should fail the testcase.
+So user should give least priority to JavascriptExecutor. Sometimes slightly increasing or decreasing the selenium version or driver server version may work for you. So, donot be hasty to use JavascriptExecutor
